@@ -21,7 +21,7 @@ class HeartrateCallback(event.EventCallback):
             #hexValues = binascii.hexlify(msg.payload)
             #print( "id:{} value:{} type:{}".format(message.number, hexValues, type(msg) ) )
             print(hexValues)
-            cacheLocation = '/home/aws_cam/diskcachedir'
+            cacheLocation = '/home/aws_cam/aws-smartcycle/db'
             with Cache(cacheLocation) as cache:
                 cache[b'heartrate'] = ord(msg.payload[8])
                 print('Cached heartrate: {}'.format(cache[b'heartrate']))
@@ -42,7 +42,7 @@ class TemperatureCallback(event.EventCallback):
                 current_temperature = 32 + (1.8 * (0.01 * int(str(binascii.hexlify(msg.payload[8])) + str(binascii.hexlify(msg.payload[7])),16)))
                 print('Current Page1 Temnperature: {}'.format(current_temperature))
 
-                cacheLocation = '/home/aws_cam/diskcachedir'
+                cacheLocation = '/home/aws_cam/aws-smartcycle/db'
                 with Cache(cacheLocation) as cache:
                     cache[b'temperature'] = current_temperature
                     print('Cached temperature: {}'.format(cache[b'temperature']))
@@ -70,7 +70,7 @@ class CadenceCallback(event.EventCallback):
                 #Stop bit doesn't seem to exist for the Garmin cadence sensor
                 #print('Cadence Page ID: {} Stop Bit: {}'.format(ord(msg.payload[1]), ord(msg.payload[2])))
 
-                cacheLocation = '/home/aws_cam/diskcachedir'
+                cacheLocation = '/home/aws_cam/aws-smartcycle/db'
 
                 with Cache(cacheLocation) as c:
                     prev_cad_rev_count = c.get(b'prevcadrevcount', 0)
@@ -121,7 +121,7 @@ class SpeedCallback(event.EventCallback):
                 stop_bit = ord(msg.payload[2])
                 #Only update speed value when stop bit = 0 which means bike is moving
 
-                cacheLocation = '/home/aws_cam/diskcachedir'
+                cacheLocation = '/home/aws_cam/aws-smartcycle/db'
 
                 #false (zero) bit value means bike is in motion
                 if stop_bit == 0:
