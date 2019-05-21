@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "bf530d22193b75fd7e93ea365ec801f36056783110474712d92c4040e0053d2b"
+            "sha256": "fa1f1d2373ceb5d19f3934f20dbfc46c10bd1af41fd0b4f5081ba99ba46643a2"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,13 +16,6 @@
         ]
     },
     "default": {
-        "ant": {
-            "hashes": [
-                "sha256:14fcb47286fdfaf96625d0099797ed9f2dd26393c1aa01c1e16b81c3a2de9ac4"
-            ],
-            "index": "pypi",
-            "version": "==0.1.0"
-        },
         "diskcache": {
             "hashes": [
                 "sha256:99db0eec5c86060b3ae906009d86bb99f70d36a09836606396ae3b237cc92b18",
@@ -30,18 +23,6 @@
             ],
             "index": "pypi",
             "version": "==3.1.1"
-        },
-        "msgpack-python": {
-            "hashes": [
-                "sha256:f68769ba9c3f741ae94e3a5faae2dbd44c2d971e4fa97c577dbddc57b2651f8d"
-            ],
-            "version": "==0.1.10"
-        },
-        "pyserial": {
-            "hashes": [
-                "sha256:eddd22280e0dac0888c6cddd8906ebd902fa42467fee151c43ecde4196bbf511"
-            ],
-            "version": "==2.5"
         }
     },
     "develop": {}
