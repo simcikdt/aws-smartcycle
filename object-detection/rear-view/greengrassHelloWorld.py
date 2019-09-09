@@ -100,7 +100,7 @@ def greengrass_infinite_infer_run():
         local_display.start()
         # The sample projects come with optimized artifacts, hence only the artifact
         # path is required.
-        model_path = '/home/aws_cam/aws-smartcycle/object-detection/models/rear-view/mxnet_deploy_model_algo_1_FP32_FUSED.xml'
+        model_path = '/home/aws_cam/aws-smartcycle/object-detection/models/mxnet_deploy_model_algo_1_FP32_FUSED.xml'
         #error, model_path = mo.optimize(model_name, input_width, input_height , aux_inputs={'--epoch':0})
         # Load the model onto the GPU.
         client.publish(topic=iot_topic, payload='Loading object detection model: {0}'.format(model_path))
